@@ -62,7 +62,7 @@ function eliminar(req, res) {
 
 function listar(req, res) {
     ingreso.sequelize.query(`
-       select * from ingreso '
+       select * from "avp"."ingreso"'
         
     `, {type: sequelize.QueryTypes.SELECT})
         .then(resultset => {

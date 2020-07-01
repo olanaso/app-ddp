@@ -9,10 +9,10 @@ module.exports = function(sequelize, DataTypes) {
                 autoIncrement: true
             },
 
-            // nombres: {
-            //     type: DataTypes.STRING,
-            //     allowNull: true
-            // },
+            nombres: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
             // apellidos: {
             //     type: DataTypes.STRING,
             //     allowNull: true

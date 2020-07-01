@@ -62,7 +62,7 @@ function eliminar(req, res) {
 
 function listar(req, res) {
     actividadcampo.sequelize.query(`
-       select * from actividadcampo where fecharegistro>='${req.params.fechainicio}' and fecharegistro<='${req.params.fechafin}'
+       select * from "avp"."actividadcampo" where fecharegistro>='${req.params.fechainicio}' and fecharegistro<='${req.params.fechafin}'
     
     `, {type: sequelize.QueryTypes.SELECT})
         .then(resultset => {

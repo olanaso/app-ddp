@@ -70,7 +70,7 @@ function eliminar(req, res) {
 function listar(req, res) {
 
     personal.sequelize.query(`
-       select * from personal
+       select * from  "avp"."personal"
     `, {type: sequelize.QueryTypes.SELECT})
         .then(resultset => {
             res.status(200).json(resultset)
