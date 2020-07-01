@@ -40,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         {
             timestamps: false,
-            schema: dvp
+            schema: "avp"
         }
     );
 };
