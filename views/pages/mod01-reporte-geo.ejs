@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:url" content="http://www.clearchannel.com.pe/servicio/digital/">
+    <meta property="og:type" content="website">
+    <title>Clear Channel | Clear Targets</title>
+    <meta name="description" content="Revolucionamos la manera de comunicarte con tus audiencias">
+    <meta property="og:title" content="Clear Channel | Servicio | Digital">
+    <meta property="og:description" content="Revolucionamos la manera de comunicarte con tus audiencias">
+    <meta property="og:image" content="http://www.clearchannel.com.pe/thumbs/3f0775170d6ace53ef3418cc30876131.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+    <!-- inicio favicon  iphone retina, ipad, iphone en orden-->
+    <link rel="apple-touch-icon-precomposed" href="http://www.clearchannel.com.pe//static/img/favicon/57.png">
+    <link rel="icon" type="image/png" href="http://www.clearchannel.com.pe/static/img/favicon/256.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="http://www.clearchannel.com.pe//static/img/favicon/114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="http://www.clearchannel.com.pe//static/img/favicon/72.png">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/jqgridBootstrap/ui.jqgrid-bootstrap.css">
+    <!-- Font Awesome -->
+    <link href="https://fontawesome.com/v4.7.0/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Pace -->
+    <link href="css/pace.css" rel="stylesheet">
+
+    <!-- Chosen -->
+    <link href="css/chosen/chosen.min.css" rel="stylesheet"/>
+
+    <!-- Datepicker -->
+    <link href="css/datepicker.css" rel="stylesheet"/>
+
+    <!-- Timepicker -->
+    <link href="css/bootstrap-timepicker.css" rel="stylesheet"/>
+
+    <!-- Slider -->
+    <link href="css/slider.css" rel="stylesheet"/>
+
+    <!-- Tag input -->
+    <link href="css/jquery.tagsinput.css" rel="stylesheet"/>
+
+    <!-- WYSIHTML5 -->
+    <link href="css/bootstrap-wysihtml5.css" rel="stylesheet"/>
+
+    <!-- Dropzone -->
+    <link href='css/dropzone/dropzone.css' rel="stylesheet"/>
+
+    <!-- Endless -->
+    <link href="css/endless.min.css" rel="stylesheet">
+    <link href="css/endless-skin.css" rel="stylesheet">
+
+    <!-- Geosolution CSS -->
+    <link rel="stylesheet" href="plugins/geosolution/geosolution.css"/>
+    <link rel="stylesheet" href="http://leaflet.github.io/Leaflet.fullscreen/dist/leaflet.fullscreen.css"/>
+
+    <link rel="stylesheet" href="plugins/bbva_plugins/leaflet.contextmenu.css"/>
+    <style>
+
+    </style>
+
+
+
+</head>
+
+<body class="overflow-hidden">
+
+<!-- Overlay Div -->
+<div id="overlay" class="transparent"></div>
+
+<div id="wrapper" class="preload" style="height: 100%">
+
+<% include ../partials/header.html %>
+<!-- /top-nav-->
+<% include ../partials/siderbarmod01.html %>
+
+<div id="main-container" style="height: 100%">
+
+    <div id="map-container" class="split">
+
+
+
+
+        <div  id="map" >
+
+        </div>
+
+
+
+
+        <!-- /panel -->
+
+
+    </div>
+    <div id="table-container" class="split">
+        <div id="toolbar" style="width: 500px;">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#filterModal">
+                    <i class="fa fa-gears"></i> Generar Circuitos
+                </button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-cloud-download"></i> Exportar Datos <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="download-csv-btn"><i class="fa fa-file-text-o"></i> CSV</a></li>
+                        <li><a href="#" id="download-excel-btn"><i class="fa fa-file-excel-o"></i> Excel</a></li>
+                        <li><a href="#" id="download-pdf-btn"><i class="fa fa-file-pdf-o"></i> PDF</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <span id="feature-count" class="text-muted" style="padding-left: 15px;"></span>
+
+
+        </div>
+        <form class="form-inline no-margin pull-right">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-sm">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-sm btn-info" tabindex="-1"><i class="fa fa-search"></i>Buscar</button>
+
+                        </div> <!-- /input-group-btn -->
+                    </div> <!-- /input-group -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </form>
+        <table id="grid" class="table table-hover table-striped">
+        </table>
+        <div id="pager"></div>
+    </div>
+
+
+
+
+
+</div>
+
+<!--breadcrumb-->
+
+<!-- /.padding-md -->
+</div>
+<!-- /main-container -->
+
+<!-- /Modal -->
+
+
+<a href="" id="scroll-to-top" class="hidden-print">
+    <i class="fa fa-chevron-up"></i>
+</a>
+
+
+<% include ../partials/modal.html %>
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--  -->
+
+<script src="plugins/geosolution/geosolution.js"></script>
+<script src='http://leaflet.github.io/Leaflet.fullscreen/dist/Leaflet.fullscreen.min.js'></script>
+<script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+
+<script src="plugins/bbva_plugins/leaflet.contextmenu.js"></script>
+<!-- Jquery -->
+<script src="js/jquery-1.10.2.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<!-- Modernizr -->
+<script src='js/modernizr.min.js'></script>
+
+<!-- Pace -->
+<script src='js/pace.min.js'></script>
+
+<!-- Popup Overlay -->
+<script src='js/jquery.popupoverlay.min.js'></script>
+
+<!-- Slimscroll -->
+<script src='js/jquery.slimscroll.min.js'></script>
+
+<!-- Cookie -->
+<script src='js/jquery.cookie.min.js'></script>
+
+<!-- Endless -->
+
+<script src="js/endless/endless.js"></script>
+<!-- jqgridBoostrap -->
+<script src="plugins/jqgridBootstrap/grid.locale-es.js"></script>
+<script src="plugins/jqgridBootstrap/jquery.jqGrid.js"></script>
+
+<!-- App -->
+
+<script src="plugins/jqgridBootstrap/jquery.jqGrid.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.2.0/split.min.js"></script>
+
+<script src="http://200.121.128.102/bbva/assets/js/proj4js-compressed.js"></script>
+<script src="http://200.121.128.102/bbva/assets/js/EPSG28355.js"></script>
+
+
+
+<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+
+<!-- Additional files for the Highslide popup effect -->
+<script src="https://www.highcharts.com/media/com_demo/js/highslide-full.min.js"></script>
+<script src="https://www.highcharts.com/media/com_demo/js/highslide.config.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="https://www.highcharts.com/media/com_demo/css/highslide.css" />
+
+
+<script src='clearchannel.bundle.js'></script>
+
+</body>
+
+</html>

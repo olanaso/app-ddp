@@ -1,0 +1,421 @@
+
+<div class="modal fade" id="chartModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <form class="form-inline ">
+
+                    <div style="color: #000434;">
+                        <img src="img/estadistica.svg"
+                             style="height:20px;">
+                        <b>PANEL:</b> <span id="i_panel"></span> |
+                        <b>DIRECCION: </b> <span id="i_direccion"></span></div>
+
+
+                </form>
+
+
+
+            </div>
+            <div class="modal-body" style="overflow: auto;">
+                <div role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#banda_horaria" aria-controls="reports" role="tab" data-toggle="tab">Banda Horaria</a></li>
+                        <li role="presentation"><a href="#tipo_dia" aria-controls="charts" role="tab" data-toggle="tab">D&iacute;a de la semana</a></li>
+                        <li role="presentation"><a href="#genero" aria-controls="charts" role="tab" data-toggle="tab">G&eacute;nero</a></li>
+                        <li role="presentation"><a href="#rango-edad" aria-controls="charts" role="tab" data-toggle="tab">Rango de edad</a></li>
+                        <li role="presentation"><a href="#p_nse" aria-controls="charts" role="tab" data-toggle="tab">Nivel socio-econ&oacute;mico</a></li>
+                        <li role="presentation"><a href="#razon_visita" aria-controls="charts" role="tab" data-toggle="tab">Raz&oacute;n de visita</a></li>
+                        <li role="presentation"><a href="#p_perfil" aria-controls="charts" role="tab" data-toggle="tab">Perfil</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="banda_horaria">
+
+                            <div id="e_banda_horaria" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="tipo_dia">
+                            <div id="e_tipo_dia" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="genero">
+                            <div id="e_genero" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="rango-edad">
+                            <div id="e_rango_edad" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="p_nse">
+                            <div id="e_p_nse" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="razon_visita">
+                            <div id="e_razon_visita" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="p_perfil">
+                            <div id="e_p_perfil" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Logout confirmation -->
+<div class="modal fade" id="formModal" >
+    <div class="modal-dialog modal-lg" >
+        <div class="modal-content" style="background: #3E6B96">
+            <div class="modal-header" style="background: #325578;    border-bottom: 1px solid #396389; ">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 style="color: #FFFFFF;"><img src="img/embudo.svg"
+                                                 style="height:30px; ">  Filtros</h4>
+            </div>
+
+            <div class="modal-header" style="background: #3E6B96;    border-bottom: 1px solid #396389; ">
+                <form class="form-inline no-margin">
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label"  style="color: #FFFFFF;">Año:</label>
+                        <div class="col-lg-4">
+                            <select id="drpanio_especif" class="form-control">
+                                <option value="0">Todos</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+
+                            </select>
+                        </div><!-- /.col -->
+
+                        <label class="col-lg-2 control-label"  style="color: #FFFFFF;">Mes:</label>
+                        <div class="col-lg-4">
+                            <select id="drpmes_especif" class="form-control" >
+                                <option value="0">Todos</option>
+                                <option value="Enero">Enero</option>
+                                <option value="Febrero">Febrero</option>
+                                <option value="Marzo">Marzo</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Mayo">Mayo</option>
+                                <option value="Junio">Junio</option>
+                                <option value="Julio">Julio</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setiembre">Setiembre</option>
+                                <option value="Octubre">Octubre</option>
+                                <option value="Noviembre">Noviembre</option>
+                                <option value="Diciembre">Diciembre</option>
+                            </select>
+                        </div><!-- /.col -->
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body" style="color:#ffffff;">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <form class="form-horizontal">
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <!--Tipo de dia -->
+                                    <h4 class="headline" style="border-bottom: 0px solid #eee;">
+                                        <img src="img/tipodia.svg"
+                                             style="height:30px;">
+                                        Tipo de D&iacute;a
+                                        <span class="line"></span>
+                                    </h4>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-tipodia filters"
+                                                      val-filter="Lunes">Lunes</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-tipodia filters"
+                                                      val-filter="Martes">Martes</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-tipodia filters"
+                                                      val-filter="Miercoles">Mi&eacute;rcoles</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-tipodia filters"
+                                                      val-filter="Jueves">Jueves</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-tipodia filters"
+                                                      val-filter="Viernes">Viernes</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-tipodia filters"
+                                                      val-filter="Sabado">S&aacute;bado</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-tipodia filters"
+                                                      val-filter="Domingo">Domingo</label>
+                                    </div>
+
+                                    <!--Edad -->
+                                    <h4 class="headline" style="border-bottom: 0px solid #eee;">
+                                        <img src="img/edad.svg"
+                                             style="height:30px;"> Rango Edad
+                                        <span class="line"></span>
+                                    </h4>
+
+
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-redad filters"
+                                                      val-filter="15 a 19">15 a 19</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-redad filters"
+                                                      val-filter="20 a 24">20 a 24</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-redad filters"
+                                                      val-filter="25 a 29">25 a 29</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-redad filters"
+                                                      val-filter="30 a 34">30 a 34</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-redad filters"
+                                                      val-filter="35 a 39">35 a 39</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-redad filters"
+                                                      val-filter="40 a 44">40 a 44</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-redad filters"
+                                                      val-filter="45 a 49">45 a 49</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-redad filters"
+                                                      val-filter="50 a 54">50 a 54</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-redad filters"
+                                                      val-filter="55 a 59">55 a 59</label>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-redad filters"
+                                                      val-filter="60 a mas">60 a mas</label>
+                                    </div>
+
+
+
+
+
+
+
+
+
+                                </div><!-- /.col -->
+
+                                <div class="col-md-4">
+                                    <h4 class="headline" style="border-bottom: 0px solid #eee;">
+                                        <img src="img/nse.svg" style="height:30px;">  NSE
+                                        <span class="line"></span>
+                                    </h4>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-nivelSE filters" val-filter="A">A</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-nivelSE filters" val-filter="B">B</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-nivelSE filters" val-filter="C">C</label>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-nivelSE filters" val-filter="D">D</label>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-nivelSE filters" val-filter="E">E</label>
+                                    </div>
+
+                                    <h4 class="headline" style="border-bottom: 0px solid #eee;">
+                                        <img src="img/viajero.svg"
+                                             style="height:30px;"> Perfil
+                                        <span class="line"></span>
+                                    </h4>
+
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-perfil filters"
+                                                      val-filter="Consumista">Consumista</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-perfil filters"
+                                                      val-filter="Viajero">Viajero</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-perfil filters"
+                                                      val-filter="Vida Social">Vida Social</label>
+                                    </div>
+
+                                    <h4 class="headline" style="border-bottom: 0px solid #eee;">
+                                        <img src="img/genero.svg"
+                                             style="height:30px;"> G&eacute;nero
+                                        <span class="line"></span>
+                                    </h4>
+
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-genero filters"
+                                                      val-filter="Masculino">Masculino</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" class="f-genero filters"
+                                                      val-filter="Femenino">Femenino</label>
+                                    </div>
+
+
+                                </div><!-- /.col -->
+                                <div class="col-md-4">
+
+                                    <!--Edad -->
+                                    <h4 class="headline" style="border-bottom: 0px solid #eee;">
+                                        <img src="img/horario.svg"
+                                             style="height:30px;"> Horarios
+                                        <span class="line"></span>
+                                    </h4>
+
+
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"  class="f-horario filters"
+                                                   val-filter="0 - 6"> 00 - 06 horas</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="f-horario filters"
+                                                   val-filter="6 - 9"> 06 - 09 horas</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="f-horario filters"
+                                                   val-filter="9 - 12"> 09 - 12 horas</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="f-horario filters"
+                                                   val-filter="12 - 15"> 12 - 15 horas</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="f-horario filters"
+                                                   val-filter="15 - 18"> 15 - 18 horas</label>
+                                    </div>
+
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" class="f-horario filters"
+                                                   val-filter="21 - 0"> 21 - 00 horas</label>
+                                    </div>
+
+
+
+
+
+                                    <h4 class="headline" style="border-bottom: 0px solid #eee;">
+                                        <img src="img/razonvisita.svg" style="height:30px;"> Raz&oacute;n de Visita
+                                        <span class="line"></span>
+                                    </h4>
+
+
+                                    <div class="checkbox">
+                                        <label> <input type="checkbox" name="myRadio" value="2" class="f-motivo filters"
+                                                       val-filter="Trabajador">
+                                            <select style="color:#000000; width: 120px">
+                                                <option value="volvo">Todos</option>
+                                                <option value="saab">San Isidro</option>
+                                                <option value="opel">Lima</option>
+                                                <option value="audi">San Juan de Lurigancho</option>
+                                            </select>
+                                            Trabajador </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" name="myRadio" value="3" class="f-motivo filters"
+                                                      val-filter="Residente">
+                                            <select style="color:#000000; width: 120px">
+                                                <option value="volvo">Todos</option>
+                                                <option value="saab">San Isidro</option>
+                                                <option value="opel">Lima</option>
+                                                <option value="audi">San Juan de Lurigancho</option>
+                                            </select>
+                                            Residente</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label> <input type="checkbox" name="myRadio" value="3" class="f-motivo filters"
+                                                       val-filter="Otros">
+                                            <select style="color:#000000; width: 120px">
+                                                <option value="volvo">Todos</option>
+                                                <option value="saab">San Isidro</option>
+                                                <option value="opel">Lima</option>
+                                                <option value="audi">San Juan de Lurigancho</option>
+                                            </select>
+                                            Otros </label>
+                                    </div>
+
+
+                                </div><!-- /.col -->
+                            </div>
+                          <br>
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-12">
+
+                                    <button id="ejecutar_filtro" type="button"
+                                            class="btn btn-primary btn-round-sm btn-sm" style="border: 1px solid #fff;
+    background: transparent;
+    color: #fff;"><i class="fa fa-filter"></i>
+                                        Ejecutar Filtro
+                                    </button>
+
+                                    <button id="limpiar_filtro" type="button"
+                                            class="btn btn-default btn-round-sm btn-sm" style="border: 1px solid #fff;
+    background: transparent;
+    color: #fff;"><i class="fa fa-eraser"></i>
+                                        Limpiar Filtro
+                                    </button>
+
+                                </div><!-- /.col -->
+                            </div><!-- /form-group -->
+                        </form>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<!-- Logout confirmation -->
+<div class="modal fade" id="information_modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <form class="form-inline ">
+
+                    <div style="color: #000434;">
+                        <img src="img/info.svg"
+                             style="height:20px;">
+                        <b>PANEL:</b> <span id="panel"></span> |
+                        <b>DIRECCION: </b> <span id="direccion"></span></div>
+
+
+                </form>
+
+
+
+            </div>
+
+
+
+            <img id="imgpanel" class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [800x400]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_166f4828a87%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_166f4828a87%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22217.7%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+
+
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

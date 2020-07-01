@@ -1,0 +1,66 @@
+ <div class="modal fade" id="modal-default">
+                <div class="modal-dialog modal-dialog-centered " style="width: 960px;">
+                    <div class="modal-content">
+                        <form id="form" action="javascript:blank()" class="form-horizontal">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title"><i class="fa fa-user" aria-hidden="true"></i> Actividades del Dia: <label id="personal_transaccion"></label>
+                                </h4>
+                                Fecha: <input id="fecha_transaccion" type="date" name="">
+                            </div>
+                            <div class="modal-body">
+
+                                <!-- form start -->
+
+                                <div id="containerGrilla" class="box-body">
+                                   
+                                  
+
+                                    <table id="grid" class="table table-bordered table-hover">
+                                    </table>
+                                    <div id="pager"></div>
+
+                                </div>
+                                <!-- /.box-footer -->
+
+                            </div>
+                            <div class="modal-footer">
+
+                                <button id="btnNuevo" type="submit" class="btn btn-primary"
+                                        data-loading-text="<i class='fa fa-spinner fa-spin '></i> Guardando">Guardar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+
+
+             <div class="modal fade" id="modal-seguimiento">
+                <div class="modal-dialog modal-dialog-centered " style="width: 960px;">
+                    <div class="modal-content">
+                        <form id="form" action="javascript:blank()" class="form-horizontal">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title"><i class="fa fa-user" aria-hidden="true"></i> Actividades del Dia: <label id="personal_transaccion_s"></label>
+                                </h4>
+                                Fecha : <input id="fecha_inicio" type="text" name="" data-mask="9999-99-99 99:99">
+                               
+                            </div>
+                           
+                            <div class="modal-footer">
+
+                                <button id="btngenerarseguimiento" type="submit" class="btn btn-primary"
+                                        data-loading-text="<i class='fa fa-spinner fa-spin '></i> Guardando">Generar Seguimiento
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>

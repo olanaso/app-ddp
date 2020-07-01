@@ -1,0 +1,106 @@
+<div id="top-nav" class="skin-3 fixed">
+    <div class="brand">
+        <span></span>
+        <span class="text-toggle"><img src="img/logo-footer.svg" style="padding: 3px;"/></span>
+    </div><!-- /brand -->
+    <button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <button type="button" class="navbar-toggle pull-left hide-menu" id="menuToggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <ul class="nav-notification clearfix">
+
+
+
+        <li class="dropdown">
+            <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-laptop fa-white"></i> <span id="view">Vista devidida </span><b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" name="view" id="map-graph"><i class="fa fa-th-large"></i> Dividido</a></li>
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" name="view" id="map-only"><i class="fa fa-globe"></i> Vista del Mapa</a></li>
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" name="view" id="graph-only"><i class="fa fa-table"></i> Vista de la Tabla</a></li>
+            </ul>
+        </li>
+
+        <li class="profile dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <strong>Bienvenido: <%= user.nombres %> </strong>
+                <span><i class="fa fa-chevron-down"></i></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="clearfix" href="#">
+                        <img src="http://www.clearchannel.com.pe/static/img/favicon/256.png" alt="User Avatar">
+                        <div class="detail">
+
+                            <strong><%= user.nombres + ' ' +user.apellidos %></strong>
+                            <p class="grey"><%= user.telefono %></p>
+                        </div>
+                    </a>
+                </li>
+                <li><a tabindex="-1" href="perfil-usuario" class="main-link"><i class="fa fa-edit fa-lg"></i> Editar
+                    Perfil</a></li>
+
+                <li class="divider"></li>
+                <li><a id="cerrar_session" tabindex="-1" class="main-link logoutConfirm_open" href="#logoutConfirm"><i
+                        class="fa fa-lock fa-lg"></i> Salir</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav-notification clearfix">
+
+        <li class="dropdown">
+            <a style="color:#000434" href="#formModal" data-toggle="modal" class="btn btn-xs pull-right" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                <span id="view">Filtros </span>  <i class="fa fa-filter"></i>
+            </a>
+
+        </li>
+
+
+    </ul>
+</div>
+<script>
+
+    document.getElementById('cerrar_session').addEventListener('click', e => {
+
+        if (confirm('¿Desea cerrar session de este usuario ?')) {
+            alert('Saliendo')
+
+            let options = {
+                method: "GET"
+            }
+
+            fetch('/api/logout', options).then(response => {
+                Pace.restart()
+                return response.json();
+            }).then(personal => {
+                document.getElementById('nombre_personal').value = `${personal.nombres} ${personal.apellidos}`
+            }).catch(error => {
+                alert('Ocurrio un Error!!' + error)
+            })
+
+
+        } else {
+
+        }
+        /*  let codigo = e.target.value
+        var data = { codigo_vendedor_libra:codigo };
+        var url = '/api/v1/personal_cod_libra/' + codigo
+
+        fetch(url).then(response => {
+            Pace.restart()
+            return response.json();
+        }).then(personal=>{
+            document.getElementById('nombre_personal').value=`${personal.nombres} ${personal.apellidos}`
+        }).catch(error=>{
+            alert('Ocurrio un Error!!'+error)
+        })*/
+
+
+    })
+</script>

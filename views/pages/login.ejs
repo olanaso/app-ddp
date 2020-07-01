@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	  <meta property="og:url" content="http://www.clearchannel.com.pe/servicio/digital/">
+	  <meta property="og:type" content="website">
+	  <title>Login | Clear Targets</title>
+	  <meta name="description" content="Revolucionamos la manera de comunicarte con tus audiencias">
+	  <meta property="og:title" content="Clear Channel | Servicio | Digital">
+	  <meta property="og:description" content="Revolucionamos la manera de comunicarte con tus audiencias">
+	  <meta property="og:image" content="http://www.clearchannel.com.pe/thumbs/3f0775170d6ace53ef3418cc30876131.jpg">
+	  <meta property="og:image:width" content="1200">
+	  <meta property="og:image:height" content="627">
+	  <!-- inicio favicon  iphone retina, ipad, iphone en orden-->
+	  <link rel="apple-touch-icon-precomposed" href="http://www.clearchannel.com.pe//static/img/favicon/57.png">
+	  <link rel="icon" type="image/png" href="http://www.clearchannel.com.pe/static/img/favicon/256.png">
+	  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.clearchannel.com.pe//static/img/favicon/114.png">
+	  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.clearchannel.com.pe//static/img/favicon/72.png">
+	   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	   
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Font Awesome -->
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	
+	<!-- Endless -->
+	<link href="css/endless.min.css" rel="stylesheet">
+	<style>
+	.login-page, .register-page {
+    background: url("img/background.jpg") no-repeat center center fixed;
+        background-size: auto auto;
+    background-size: cover;
+}
+
+
+
+	/* most styles borrowed from
+    https://codepen.io/Lewitje/pen/BNNJjo?q=login&order=popularity&depth=everything&show_forks=false
+    */
+	@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+	* {
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		font-weight: 300;
+	}
+	body {
+		font-family: 'Source Sans Pro', sans-serif;
+		color: white;
+		font-weight: 300;
+	}
+	body ::-webkit-input-placeholder {
+		/* WebKit browsers */
+		font-family: 'Source Sans Pro', sans-serif;
+		color: white;
+		font-weight: 300;
+	}
+	body :-moz-placeholder {
+		/* Mozilla Firefox 4 to 18 */
+		font-family: 'Source Sans Pro', sans-serif;
+		color: white;
+		opacity: 1;
+		font-weight: 300;
+	}
+	body ::-moz-placeholder {
+		/* Mozilla Firefox 19+ */
+		font-family: 'Source Sans Pro', sans-serif;
+		color: white;
+		opacity: 1;
+		font-weight: 300;
+	}
+	body :-ms-input-placeholder {
+		/* Internet Explorer 10+ */
+		font-family: 'Source Sans Pro', sans-serif;
+		color: white;
+		font-weight: 300;
+	}
+	.wrapper {
+		background: #50a3a2;
+		background: -webkit-gradient(linear, left top, right bottom, from(#50a3a2), to(#53e3a6));
+		background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 450px;
+		margin-top: -200px;
+		overflow: hidden;
+	}
+	.wrapper.form-success .container h1 {
+		-webkit-transform: translateY(85px);
+		transform: translateY(85px);
+	}
+	.container {
+		max-width: 600px;
+		margin: 0 auto;
+		padding: 180px 0;
+		height: 400px;
+		text-align: center;
+	}
+	.container h1 {
+		font-size: 40px;
+		-webkit-transition-duration: 1s;
+		transition-duration: 1s;
+		-webkit-transition-timing-function: ease-in-put;
+		transition-timing-function: ease-in-put;
+		font-weight: 200;
+	}
+	form {
+		padding: 20px 0;
+		position: relative;
+		z-index: 2;
+	}
+	form input {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		outline: 0;
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		background-color: rgba(255, 255, 255, 0.2);
+		width: 250px;
+		border-radius: 3px;
+		padding: 10px 15px;
+		margin: 0 auto 10px auto;
+		display: block;
+		text-align: center;
+		font-size: 18px;
+		color: white;
+		-webkit-transition-duration: 0.25s;
+		transition-duration: 0.25s;
+		font-weight: 300;
+	}
+	form input:hover {
+		background-color: rgba(255, 255, 255, 0.4);
+	}
+	form input:focus {
+		background-color: white;
+		width: 300px;
+		color: #01082A;
+	}
+	.loginbutton {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		outline: 0;
+		background-color: white;
+		border: 0;
+		padding: 10px 15px;
+		color: #53e3a6;
+		border-radius: 3px;
+		width: 125px;
+		cursor: pointer;
+		font-size: 18px;
+		-webkit-transition-duration: 0.25s;
+		transition-duration: 0.25s;
+	}
+	form button:hover {
+		background-color: #f5f7f9;
+	}
+	.fadeout {
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s .5s, opacity .5s linear;
+	}
+
+	.fadeout2 {
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s .5s, opacity .5s linear;
+	}
+
+	@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+	.fadein {
+		opacity: 0;
+		animation:fadeIn ease-in 1;
+		animation-fill-mode: forwards;
+		animation-duration: 0.5s;
+		animation-delay: 0.5s;
+	}
+
+	.error {
+		color: #fcd6e6;
+	}
+
+	.google-button {
+		height: 40px;
+		border-width: 0;
+		background: white;
+		color: #737373;
+		border-radius: 5px;
+		white-space: nowrap;
+		-webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.05);
+		box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.05);
+		-webkit-transition-property: background-color, -webkit-box-shadow;
+		transition-property: background-color, -webkit-box-shadow;
+		transition-property: background-color, box-shadow;
+		transition-property: background-color, box-shadow, -webkit-box-shadow;
+		-webkit-transition-duration: 150ms;
+		transition-duration: 150ms;
+		-webkit-transition-timing-function: ease-in-out;
+		transition-timing-function: ease-in-out;
+		padding: 0;
+		margin-top: 4px;
+		width: 254px;
+	}
+
+	.google-button__icon {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 8px 0 8px 8px;
+		width: 18px;
+		height: 18px;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	.google-button__icon--plus {
+		width: 27px;
+	}
+
+	.google-button__text {
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 24px;
+		font-size: 14px;
+		font-weight: bold;
+		font-family: 'Roboto',arial,sans-serif;
+	}
+
+	.role {
+		margin-top:-150px;
+	}
+
+	.characters-wrapper {
+		margin-top:-75px;
+	}
+
+	.characters {
+		width:30%;
+		margin:1.5%;
+		float:left;
+	}
+
+	.hidden {
+		display:none;
+	}
+
+	.nosignin {
+		margin-top:20px;
+		font-size: .8em;
+	}
+	</STYLE>
+
+  </head>
+  <a style="padding: 15px;" class="navbar-brand top" href="http://www.telefonica.com.pe/grandesempresas/"><img style="height: 160px" src="img/LogoClearTargets.png" alt="Telefonica Empresas"> </a>
+
+
+  <body class="hold-transition login-page">
+
+
+	  <div class="container">
+		  <h1 style=" text-shadow: 0px 1px 0px rgba(255,255,255,1);   ">Login</h1>
+		  <div id="error" class="error"></div>
+		  <form class="form" id="signup">
+			  <center>
+			  <input type="email" id="email" placeholder="Usuario" required>
+			  <br>
+			  <input type="password" id="password" placeholder="Contraseña" required>
+			  </center>
+			  <br>
+			  <a href="clear-channel">
+			  <button type="button" id="google-login" class="google-button">
+
+				  <span class="google-button__text">Ingresar</span>
+			  </button>
+			  </a>
+			  <div class="nosignin"><a href="#" id="nosignin">Power by Luca-Telefonica & Geosolution</a></div>
+		  </form>
+
+
+	  </div>
+
+  <!-- /.login-box -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <!-- Jquery -->
+	<script src="js/jquery-1.10.2.min.js"></script>
+    
+    <!-- Bootstrap -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Modernizr -->
+	<script src='js/modernizr.min.js'></script>
+
+    <!-- Pace -->
+	<script src='js/pace.min.js'></script>
+
+	<!-- Popup Overlay -->
+	<script src='js/jquery.popupoverlay.min.js'></script>
+
+    <!-- Slimscroll -->
+	<script src='js/jquery.slimscroll.min.js'></script>
+
+	<!-- Cookie -->
+	<script src='js/jquery.cookie.min.js'></script>
+
+	<!--Endless-->
+
+    <!-- login app-->
+	<script src="/login.bundle.js"></script>
+
+
+  </body>
+</html>

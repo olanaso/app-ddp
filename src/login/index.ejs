@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Endless -->
+    <link href="css/endless.min.css" rel="stylesheet">
+    <style>
+        .login-page, .register-page {
+            background: url("img/background.jpg") no-repeat center center fixed;
+            background-size: auto auto;
+            background-size: cover;
+        }
+        .panel-default, .panel-heading {
+            background: rgba(255,244,28,.6) !important;
+        }
+
+    </style>
+
+</head>
+
+<body class="login-page">
+<div class="login-wrapper">
+
+    <div class="login-widget animation-delay1">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix"><center>
+                    <div class="pull-center" style="color:#0F0500; font-size: 18px">
+                        <img src="img/policeman_logo.svg" style="height: 60px;"> Inicio de Sessi&oacute;n
+                    </div>
+                </center>
+
+                <div class="pull-right">
+                </div>
+            </div>
+            <div class="panel-body">
+                <form id="formlogin" action="javascript:0" class="form-login">
+                    <div class="form-group">
+                        <label style="color:#0F0500;font-size: 18px">DNI</label>
+                        <input id="dni" style="color:#0F0500;font-size: 18px" required type="number" maxlength="8" placeholder="DNI"  class="form-control input-sm bounceIn animation-delay2" >
+                    </div>
+                    <div class="form-group">
+                        <label style="color:#0F0500;font-size: 18px">Clave</label>
+                        <input id="clave" style="color:#0F0500;font-size: 18px" required type="password" placeholder="Clave" class="form-control input-sm bounceIn animation-delay4">
+                    </div>
+                    <div class="form-group" style="color:#0F0500">
+                        <label id="message" class="label-checkbox inline"  style="color:red">
+
+                        </label>
+
+                    </div>
+
+                    <div class="seperator"></div>
+
+                    <span class="footer-brand" style="font-size: 20pt">
+							<strong class="text-danger">JB </strong> Ingenieros
+							</span>
+                    <hr/>
+
+                    <button style="color:#FFF41C;background-color: #0F0500; border: #FFF41C" id="buttonID" type="submit" class="btn btn-success  bounceIn animation-delay5 login-link pull-right"  data-loading-text="<i class='fa fa-spinner fa-spin '></i> Ingresar"><i class="fa fa-sign-in"></i> Ingresar</button>
+                </form>
+            </div>
+        </div><!-- /panel -->
+    </div><!-- /login-widget -->
+</div><!-- /login-wrapper -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!-- Jquery -->
+<script src="js/jquery-1.10.2.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Modernizr -->
+<script src='js/modernizr.min.js'></script>
+
+<!-- Pace -->
+<script src='js/pace.min.js'></script>
+
+<!-- Popup Overlay -->
+<script src='js/jquery.popupoverlay.min.js'></script>
+
+<!-- Slimscroll -->
+<script src='js/jquery.slimscroll.min.js'></script>
+
+<!-- Cookie -->
+<script src='js/jquery.cookie.min.js'></script>
+
+<!-- Endless
+<script src="js/endless/endless.js"></script> -->
+
+<!-- login app-->
+<script src="js/app/login.js"></script>
+</body>
+</html>

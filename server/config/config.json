@@ -1,0 +1,31 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "selmira1",
+    "database": "ddp1",
+    "host": "200.121.128.102",
+    "dialect": "postgres",
+    "port":"5432",
+    "define": {
+          "freezeTableName": true
+    }
+  },
+  "test": {
+    "username": "postgres",
+    "password": "1234",
+    "database": "bdgeosolution",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "1234",
+    "database": "bdgeosolution",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+  ,"gdalProcess":{
+    "path_shape_to_dxf_processing":"/shape_to_dxf_processing",
+    "path_gdal":"C:/Program Files/QGIS 3.10/bin/"
+  }
+}
