@@ -9,5 +9,6 @@ module.exports = {
     comentarios,
     sitiosinteres, 
     ingreso,
-    actividadcampo
+    actividadcampo,
+    personal
 }
