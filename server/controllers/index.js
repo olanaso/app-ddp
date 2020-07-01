@@ -5,5 +5,6 @@ const sitiosinteres= require('./sitiosinteres');
 module.exports = {
     consultas,
     comentarios,
-    sitiosinteres
+    sitiosinteres,
+    personal
 }
