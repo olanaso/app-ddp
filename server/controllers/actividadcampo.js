@@ -21,6 +21,12 @@ module.exports = {
 
 
 function guardar(req, res) {
+    var fechaReg = new Date();
+
+    req.body.ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    req.body.equipo=req.header('user-agent');
+    req.body.fecharegistro=fechaReg.toLocaleString();
+
     actividadcampo.create(req.body)
         .then(actividadcampo => {
             res.status(200).json(actividadcampo);
