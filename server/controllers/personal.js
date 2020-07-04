@@ -16,7 +16,8 @@ module.exports = {
     guardar,
     actualizar,
     eliminar,
-    listar
+    listar,
+    consultar
 };
 
 
@@ -66,11 +67,23 @@ function eliminar(req, res) {
         .catch(error => res.status(400).send(error));
 }
 
-
 function listar(req, res) {
 
     personal.sequelize.query(`
        select * from  "avp"."personal"
+    `, {type: sequelize.QueryTypes.SELECT})
+        .then(resultset => {
+            res.status(200).json(resultset)
+        })
+        .catch(error => {
+            res.status(400).send(error)
+        })
+}
+
+function consultar(req, res) {
+
+    personal.sequelize.query(`
+       select * from  "avp"."personal" where dni = '${req.params.dni}' LIMIT 1
     `, {type: sequelize.QueryTypes.SELECT})
         .then(resultset => {
             res.status(200).json(resultset)
