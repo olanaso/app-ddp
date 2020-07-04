@@ -24,7 +24,11 @@ module.exports = function(sequelize, DataTypes) {
                 type: DataTypes.STRING,
                 allowNull: true
             },
-            movilidad: {
+            nombre_conductor: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+            placa: {
                 type: DataTypes.STRING,
                 allowNull: true
             },
@@ -32,14 +36,18 @@ module.exports = function(sequelize, DataTypes) {
                 type: DataTypes.STRING,
                 allowNull: true
             },
-            movilidad: {
-                type: DataTypes.STRING,
-                allowNull: true
-            },
             objeto_salida: {
                 type: DataTypes.STRING,
                 allowNull: true
-            }
+            },
+            lat: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+            lon: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
            
         },
         {
