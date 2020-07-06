@@ -5,5 +5,6 @@ module.exports = (app) =>{
     require('./sitiosinteres')(app),
     require('./personal')(app),
     require('./actividadcampo')(app),
-    require('./ingreso')(app)
+    require('./ingreso')(app),
+    require('./brigada')(app)
 };

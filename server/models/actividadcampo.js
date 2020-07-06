@@ -73,7 +73,19 @@ module.exports = function(sequelize, DataTypes) {
                 type: DataTypes.STRING,
                 allowNull: true
             },
+            equipo_utilizado: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+            especificar_equipo: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
             coordinaciones: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+            detalle_coordinaciones: {
                 type: DataTypes.STRING,
                 allowNull: true
             },
@@ -92,9 +104,7 @@ module.exports = function(sequelize, DataTypes) {
             equipo: {
                 type: DataTypes.STRING,
                 allowNull: true
-            }
-            
-           
+            } 
         },
         {
             timestamps: false,
