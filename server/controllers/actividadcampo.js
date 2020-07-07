@@ -16,7 +16,8 @@ module.exports = {
     guardar,
     actualizar,
     eliminar,
-    listar
+    listar,
+    obtenerpendiente
 };
 
 
@@ -70,6 +71,18 @@ function listar(req, res) {
     actividadcampo.sequelize.query(`
        select * from "avp"."actividadcampo" where fecharegistro>='${req.params.fechainicio}' and fecharegistro<='${req.params.fechafin}'
     
+    `, {type: sequelize.QueryTypes.SELECT})
+        .then(resultset => {
+            res.status(200).json(resultset)
+        })
+        .catch(error => {
+            res.status(400).send(error)
+        })
+}
+
+function obtenerpendiente(req, res) {
+    actividadcampo.sequelize.query(`select * from avp.actividadcampo where (termino_actividades_area_estudio IS NULL OR termino_actividades_area_estudio = '00:00') AND dni = '${req.params.dni}'
+        order by fecha_registro DESC LIMIT 1
     `, {type: sequelize.QueryTypes.SELECT})
         .then(resultset => {
             res.status(200).json(resultset)

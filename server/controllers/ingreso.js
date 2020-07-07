@@ -16,7 +16,8 @@ module.exports = {
     guardar,
     actualizar,
     eliminar,
-    listar
+    listar,
+    obtenerpendiente
 };
 
 
@@ -64,6 +65,18 @@ function listar(req, res) {
     ingreso.sequelize.query(`
        select * from "avp"."ingreso"
         
+    `, {type: sequelize.QueryTypes.SELECT})
+        .then(resultset => {
+            res.status(200).json(resultset)
+        })
+        .catch(error => {
+            res.status(400).send(error)
+        })
+}
+
+function obtenerpendiente(req, res) {
+    ingreso.sequelize.query(`select * from avp.ingreso where (hora_salida IS NULL OR hora_salida = '00:00') AND dni = '${req.params.dni}'
+    order by fecha_registro DESC LIMIT 1 
     `, {type: sequelize.QueryTypes.SELECT})
         .then(resultset => {
             res.status(200).json(resultset)
