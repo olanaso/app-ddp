@@ -77,14 +77,23 @@ function listar(req, res) {
 
 function listarfiltros(req, res) {
     let valordni;
-    if(req.params.dni) {
-        valordni = req.params.dni;
+    let valornombres;
+
+    if(req.query.dni) {
+        valordni = req.query.dni;
     } else {
         valordni = '%';
     }
 
+    if(req.query.nombre) {
+        valornombres = `%${req.query.nombre}%`;
+    } else {
+        valornombres = '%';
+    }
+
+
     ingreso.sequelize.query(`select * from "avp"."ingreso" where fecha_registro>='${req.params.fechainicio}' and fecha_registro<='${req.params.fechafin}'
-       and dni like '${valordni}' order by dni, fecha_registro desc
+       and dni like '${valordni}' and upper(profesional) like upper('${valornombres}')  order by dni, fecha_registro desc
     `, {type: sequelize.QueryTypes.SELECT})
         .then(resultset => {
             res.status(200).json(resultset)
