@@ -17,7 +17,8 @@ module.exports = {
     actualizar,
     eliminar,
     listar,
-    obtenerpendiente
+    obtenerpendiente,
+    listarfiltros
 };
 
 
@@ -65,6 +66,25 @@ function listar(req, res) {
     ingreso.sequelize.query(`
        select * from "avp"."ingreso"
         
+    `, {type: sequelize.QueryTypes.SELECT})
+        .then(resultset => {
+            res.status(200).json(resultset)
+        })
+        .catch(error => {
+            res.status(400).send(error)
+        })
+}
+
+function listarfiltros(req, res) {
+    let valordni;
+    if(req.params.dni) {
+        valordni = req.params.dni;
+    } else {
+        valordni = '%';
+    }
+
+    ingreso.sequelize.query(`select * from "avp"."ingreso" where fecha_registro>='${req.params.fechainicio}' and fecha_registro<='${req.params.fechafin}'
+       and dni like '${valordni}' order by dni, fecha_registro desc
     `, {type: sequelize.QueryTypes.SELECT})
         .then(resultset => {
             res.status(200).json(resultset)
