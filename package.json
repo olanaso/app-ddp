@@ -57,7 +57,7 @@
     "pg-hstore": "^2.3.2",
     "request": "^2.88.0",
     "rimraf": "^2.6.2",
-    "sequelize": "^4.39.0",
+    "sequelize": "^5.15.1",
     "shelljs": "^0.8.3",
     "shp-write": "^0.3.2",
     "socket.io": "^2.1.1",
