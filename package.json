@@ -58,7 +58,7 @@
     "request": "^2.88.0",
     "rimraf": "^2.6.2",
     "sequelize": "^4.39.0",
-    "shelljs": "^0.8.3",
+    "shelljs": "^0.8.5",
     "shp-write": "^0.3.2",
     "socket.io": "^2.1.1",
     "socket.io-client": "^2.1.1",
